@@ -1,0 +1,24 @@
+    <div>
+        <div class="mt-2 py-1 text-xl">قائمة الطلاب المطلوب عليهم مبلغ شهري </div>
+        {{ $semester_student_amount_to_pay_count }}
+    </div>
+
+    <div class="mt-2 py-1 text-xl">المواد الدراسية</div>
+
+    <div class="mt-2 py-1 text-xl">ملحوظة عن الطالب</div>
+
+    <div class="mt-2 py-1 text-xl">نقاط الطالب</div>
+
+    <div class="mt-2 py-1 text-xl">التقويم اليومي</div>
+
+    <div class="mt-2 py-1 text-xl">سجل الفصل من الدار</div>
+
+    <div class="mt-2 py-1 text-xl">التحذير من التأخر</div>
+
+    <div class="mt-2 py-1 text-xl">التحذير من الغياب</div>
+
+    <div class="mt-2 py-1 text-xl">خطة الحفظ الجديد والمراجعة</div>
+
+    <div class="mt-2 py-1 text-xl">حفظ القرآن الكريم</div>
+
+    <div class="mt-2 py-1 text-xl">(وَقُلْ رَبِّ زِدْنِي عِلْمًا)</div>

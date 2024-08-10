@@ -1,0 +1,21 @@
+<!-- weekly-->
+				<div class="text-red-800 mt-3">السجل الاسبوعي</div>
+				<div class="bar3">
+					
+
+					@if($workperiod->lastRecordweekly())
+					<small class="w-full">آخر سجل أسبوعي: {{$workperiod->lastRecordweekly()->title}}</small>
+					@endif
+
+					<div class="mt-2 flex gap-2 ">
+						<a href="{{route('admin.record.weekly.index',$workperiod->id)}}" class="btn-outline-primary btn w-full">
+							قائمة السجلات
+						</a>
+
+						@if(auth()->user()->permission('record-manage'))
+						<a href="{{route('admin.record.weekly.create',$workperiod->id)}}" class="btn-outline-primary btn w-full">
+							+ فتح
+						</a>
+						@endif
+					</div>
+				</div>

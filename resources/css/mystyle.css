@@ -1,0 +1,161 @@
+
+@font-face {
+    font-family: "Helvetica";
+    src:
+    url('../fonts/HelveticaNeueLTW20-Light.woff') format('woff'),
+    url('../fonts/HelveticaNeueLTW20-Light.svg') format('svg'),
+    url('../fonts/HelveticaNeueLTW20-Light.eot') format('embedded-opentype');
+  }
+  
+  @font-face {
+    font-family: 'uthmani1';
+    src: url('../fonts/QCF2001.ttf');
+  }
+
+  @font-face {
+    font-family: 'uthmani2';
+    src: url('../fonts/QCF2002.ttf');
+  }
+
+  @font-face {
+    font-family: 'uthmani3';
+    src: url('../fonts/QCF2003.ttf');
+  }
+  
+  @font-face {
+    font-family: 'hafs';
+    src: url('../fonts/original-hafs.woff');
+  }
+  
+
+  body {
+    font-family: 'Helvetica';
+    background-color:#EEE;
+    color: #6c4107;
+  }
+  .student-number {
+    display: inline-flex;
+    height: 1.5rem;
+    width: 3rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.125rem;
+    border-width: 1px;
+    border-color: #7f5418 !important;
+    color: #7f5418;
+  }
+  @layer components {
+    /* add select timing status */
+    .btn-timing-status {
+        @apply h-12 w-20 border rounded cursor-pointer flex justify-center items-center hover:opacity-70;
+    }
+
+    .btn-timing-status-active {
+        @apply bg-orangeLight font-bold  border border-brownDark;
+    }
+
+    /* add point */
+    .btn-add-point {
+        @apply h-12 w-12 border rounded cursor-pointer flex justify-center items-center hover:opacity-70;
+    }
+
+    /* add note */
+    .btn-add-note {
+        @apply text-xs h-9 px-1 border rounded cursor-pointer flex justify-center items-center hover:opacity-70;
+    }
+
+    /* evaluation*/
+    .btn-add-evaluation {
+        @apply h-12 w-20 text-sm border rounded cursor-pointer flex justify-center items-center hover:opacity-70;
+    }
+
+    .btn-evaluation-selected {
+        @apply bg-orangeLight font-bold  border border-brownDark;
+    }
+
+    /* goto next sora */
+    .btn-add-gotonext {
+        @apply h-12 w-40 text-sm border rounded cursor-pointer flex justify-center items-center hover:opacity-70;
+    }
+
+    .btn-gotonext-selected {
+        @apply bg-orangeLight font-bold  border border-brownDark;
+    }
+
+    /* attendance*/
+    .btn-attendance {
+        @apply h-20 w-24 text-sm border rounded cursor-pointer flex justify-center items-center hover:opacity-70 overflow-hidden;
+    }
+
+    .btn-attendance-selected {
+        @apply bg-orangeLight border-brownDark;
+    }
+
+    /** passreading */
+    .btn-passreading {
+        @apply h-12 w-40 text-sm border rounded cursor-pointer flex justify-center items-center hover:opacity-70;
+    }
+
+    .btn-passreading-selected {
+        @apply bg-orangeLight font-bold  border border-brownDark;
+    }
+
+    /** requestleave */
+    .btn-requestleave-status {
+        @apply border rounded p-1 w-24 text-center hover:opacity-70 hover:cursor-pointer;
+    }
+
+    .btn-requestleave-status-selected {
+        @apply bg-orangeLight font-bold border-brownDark;
+    }
+
+    /* ReceivedMessage */
+    .btn-received-message {
+        @apply h-12 w-36 text-sm border rounded cursor-pointer flex justify-center items-center hover:opacity-70;
+    }
+
+    .btn-received-message-selected {
+        @apply bg-orangeLight font-bold border-brownDark;
+    }
+
+    /* ReceivedMessage */
+    .btn-message-receiver {
+        @apply w-20 h-6 mt-1 p-1 text-[10px] border rounded cursor-pointer flex justify-center items-center hover:opacity-70;
+    }
+
+    .btn-message-receiver-selected {
+        @apply bg-orangeLight font-bold border-brownDark;
+    }
+
+    /* option */
+    .btn-option {
+        @apply p-1 text-sm border rounded cursor-pointer flex justify-center items-center hover:opacity-70;
+    }
+
+    .btn-option-selected {
+        @apply bg-orangeLight font-bold border-brownDark;
+    }
+
+    /* student */
+    .student-number {
+        @apply w-12 h-6 border text-brownDark !border-brownDark rounded-sm inline-flex items-center justify-center;
+    }
+
+    /* float button */
+    .float-button {
+        @apply fixed  z-10 bottom-4 left-10 flex flex-col justify-center items-center w-16 h-16 p-1 rounded-full text-brownDark !border-brownDark border shadow bg-gray-50  hover:bg-white text-sm hover:cursor-pointer;
+    }
+
+    /* cards */
+    .card-disabled {
+        @apply text-xs p-1 rounded bg-gray-100 text-gray-400 border;
+    }
+
+    .card-enabled {
+        @apply text-xs p-1 rounded bg-orangeLight text-brownDark border border-brownDark;
+    }
+
+    .selected {
+        @apply !bg-orangeLight !border-brownDark;
+    }
+}
