@@ -23,47 +23,9 @@ class MissionController extends Controller
 
 	public function create()
 	{
-		$missionSods = Mission::where(['status' => 'active', 'track_cate' => 'sods'])->get();
+		$missions = Mission::all();
 
-		$missionThomon = Mission::where(['status' => 'active', 'track_cate' => 'thomon'])->get();
-
-		$missionThomonAndHalf = Mission::where(['status' => 'active', 'track_cate' => 'thomon_and_half'])->get();
-
-		$missionRob = Mission::where(['status' => 'active', 'track_cate' => 'rob'])->get();
-
-		$missionNis = Mission::where(['status' => 'active', 'track_cate' => 'nis'])->get();
-
-		$missionAll = Mission::where(['status' => 'active', 'track_cate' => 'all'])->get();
-		// 
-
-		$missionSodsAsc = Mission::where(['status' => 'active', 'track_cate' => 'asc_sods'])->get();
-
-		$missionThomonAsc = Mission::where(['status' => 'active', 'track_cate' => 'asc_thomon'])->get();
-
-		$missionThomonAndHalfAsc = Mission::where(['status' => 'active', 'track_cate' => 'asc_thomon_and_half'])->get();
-
-		$missionRobAsc = Mission::where(['status' => 'active', 'track_cate' => 'asc_rob'])->get();
-
-		$missionNisAsc = Mission::where(['status' => 'active', 'track_cate' => 'asc_nis'])->get();
-
-		$missionAllAsc = Mission::where(['status' => 'active', 'track_cate' => 'asc_all'])->get();
-
-		$missionTests = Mission::where(['status' => 'active', 'track_cate' => 'test'])->get();
-		return view('admin.mission.create', compact(
-			'missionSods',
-			'missionThomon',
-			'missionThomonAndHalf',
-			'missionRob',
-			'missionNis',
-			'missionAll',
-			'missionSodsAsc',
-			'missionThomonAsc',
-			'missionThomonAndHalfAsc',
-			'missionRobAsc',
-			'missionNisAsc',
-			'missionAllAsc',
-			'missionTests'
-		));
+		return view('admin.mission.create', compact('missions'));
 	}
 
 	public function orderEdit($id)

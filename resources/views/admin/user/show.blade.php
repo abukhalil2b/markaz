@@ -73,12 +73,6 @@
             @endif
         </div>
 
-        <div>
-            @if($courseTeacherCount)
-               الدورات {{ $courseTeacherCount }}
-            @endif
-        </div>
-
         <div x-data="{ open:false }" class="flex flex-col items-center">
             <div @click=" open=true " class="text-red-400 font-bold hover:cursor-pointer">الحذف</div>
             <x-button-link-red x-cloak x-show="open" href="{{ route('admin.user.delete',$user->id) }}" class="mt-5 w-full">

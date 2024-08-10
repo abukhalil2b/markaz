@@ -21,18 +21,18 @@ class CreateUsersTable extends Migration {
 			$table->string('last_name',50)->nullable();
 			$table->string('full_name',50)->nullable();
 
-			$table->string('gender')->nullable();
-			$table->string('phone')->nullable();
+			$table->string('gender',10)->nullable();
+			$table->string('phone',10)->nullable();
 
-			$table->string('user_type')->default('teacher');
+			$table->string('user_type',20)->default('teacher');
 			$table->string('email')->unique();
 			$table->timestamp('email_verified_at')->nullable();
 			$table->string('password');
-			$table->string('plain_password');
+			$table->string('plain_password',20);
 
 			$table->smallInteger('level_id')->default(1);
 			$table->boolean('active')->default(1);
-			$table->string('note')->nullable();
+			$table->text('note')->nullable();
 			$table->integer('workperiod_id')->default(1);
 			$table->rememberToken();
 			$table->timestamps();

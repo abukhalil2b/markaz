@@ -16,7 +16,7 @@ class CreateRecorddailiesTable extends Migration {
 			$table->string('day',5);
 			$table->string('title');
 			$table->timestamps();
-			$table->boolean('create_student_list')->default(1);
+			$table->tinyInteger('workperiod_id')->default(1);
 			$table->string('gender')->default('m');
 		});
 	}

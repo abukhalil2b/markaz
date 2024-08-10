@@ -8,13 +8,7 @@ class Workperiod extends Model
 {
     public $timestamps = false;
 
-    protected $fillable = [
-        'gender',
-        'title',
-        'moderator_should_be_present_at',
-        'teacher_should_be_present_at',
-        'student_should_be_present_at',
-    ];
+    protected $guarded = [];
     
     public function userHasWorkperiods() {
         return $this->belongsToMany(User::class,'user_has_workperiod');

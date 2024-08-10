@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
+
 use App\Models\Level;
 use App\Models\Role;
 use App\Models\User;
@@ -230,8 +230,7 @@ class UserController extends Controller
 
         $userRecorddailiesCount = count($userRelationTable['userRecorddailies']);
 
-        $courseTeacherCount = count($userRelationTable['courseTeacher']);
-
+    
         return view('admin.user.show', compact(
             'workperiods',
             'user',
@@ -241,8 +240,7 @@ class UserController extends Controller
             'requestleavesCount',
             'storednotesCount',
             'suggestionsCount',
-            'userRecorddailiesCount',
-            'courseTeacherCount',
+            'userRecorddailiesCount'
         ));
     }
 
@@ -303,11 +301,6 @@ class UserController extends Controller
         $userHasWorkperiod =  DB::table('user_has_workperiod')
             ->where('user_id', $user->id);
 
-        $courseIds =  DB::table('course_teacher')
-            ->where('teacher_id', $user->id)->pluck('course_id');
-        //delete by casecade
-        $courseTeacher = Course::whereIn('id', $courseIds);
-
         if ($operation == 'delete') {
 
             $messageReceiverPermissions->delete();
@@ -344,8 +337,6 @@ class UserController extends Controller
 
             $userHasWorkperiod->delete();
 
-            $courseTeacher->delete();
-
             DB::table('users')
                 ->where('id', $user->id)
                 ->delete();
@@ -368,8 +359,6 @@ class UserController extends Controller
             $data['suggestions'] = $suggestions->get();
 
             $data['userRecorddailies'] =  $userRecorddailies->get();
-
-            $data['courseTeacher'] =  $courseTeacher->get();
 
             return $data;
         }

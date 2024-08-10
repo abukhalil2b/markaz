@@ -18,7 +18,7 @@ class CreateMissionsTable extends Migration {
 			$table->string('startfrom');
 			$table->string('endto');
 			$table->string('track_type')->default('review');
-			$table->string('track_type')->default('thomon');
+			$table->string('track_cate')->default('thomon');
 			$table->string('allowed_wrong_number',1)->default(2);
 			$table->string('status',20)->default('active');
 		});

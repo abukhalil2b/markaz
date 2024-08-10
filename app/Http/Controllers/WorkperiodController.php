@@ -27,16 +27,21 @@ class WorkperiodController extends Controller
 	public function store(Request $request)
 	{
 		$adminUsers = User::where('user_type', 'admin')->pluck('id');
+
 		// return $request->all();
-		$request->validate([
+		$data = $request->validate([
 			'title' => 'required',
+			'student_award_time'=>'required',
 			'student_should_be_present_at' => 'required',
 			'moderator_should_be_present_at' => 'required',
 			'teacher_should_be_present_at' => 'required',
 			'gender' => 'required',
 		]);
-		$workperiod = Workperiod::create($request->all());
+
+		$workperiod = Workperiod::create($data);
+
 		$workperiod->userHasWorkperiods()->attach($adminUsers);
+
 		return back();
 	}
 

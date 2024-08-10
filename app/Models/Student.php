@@ -5,22 +5,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Hash;
 
 class Student extends Authenticatable  {
-	protected $fillable =
-		[
-		'first_name',
-		'second_name',
-		'third_name',
-		'last_name',
-		'full_name',
-		'gender',
-		'password',
-		'level_id',
-		'status',
-		'todayserving',
-		'workperiod_id',
-		'study_days',
-		'under_observation'
-	];
+	protected $guarded = [];
 
 	public function notes() {
 		return $this->hasMany(Note::class);

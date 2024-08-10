@@ -29,10 +29,15 @@
 						</div>
 				
 						<div class="card-subtitle mt-3">
+							وقت حصول الطالب على نقاط:
+							<input type="time" name="student_award_time" class="form-input">
+						</div>
+
+						<div class="card-subtitle mt-3">
 							وقت حضور الطالب:
 							<input type="time" name="student_should_be_present_at" class="form-input">
 						</div>
-
+						
 						<div class="card-subtitle mt-3">
 							وقت حضور المشرف:
 							<input type="time" name="moderator_should_be_present_at" class="form-input">

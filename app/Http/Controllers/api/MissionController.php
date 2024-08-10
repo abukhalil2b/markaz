@@ -153,8 +153,7 @@ class MissionController extends Controller
 
         $studentMission = StudentMission::create([
             'student_id' => $studentId,
-            'mission_id' => $missionId,
-            'mission_task_id_is_set' => 1
+            'mission_id' => $missionId
         ]);
 
         foreach ($missionTasks as $missionTask) {
